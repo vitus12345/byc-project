@@ -42,11 +42,9 @@
   }
   h1 {
     font-weight: 700;
-    margin-top: 30px;
+   
   }
   .wordChanging {
-    // color: #bd3a3a;
-    // text-shadow: -1px 1px 2px #828282;
     text-align: left;
     overflow: hidden;
     font-size: 35px;
@@ -61,12 +59,39 @@
     border-radius: 8px;
     justify-content: center;
     span{
+      text-shadow: -1px 1px 2px #828282;
       display: block;
       padding-left: 10px;
-      animation: spin-word 6s infinite;
-      color: black;
+      animation: spin-words 6s infinite;
+      color: #bd3a3a;
       overflow-x: hidden;
       height: 100%;
+    }
+  }
+  @keyframes spin-words {
+    10% {
+      transform: translateY(-115%);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    35% {
+      transform: translateY(-212%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    60% {
+      transform: translateY(-312%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    85% {
+      transform: translateY(-412%);
+    }
+    100% {
+      transform: translateY(-400%);
     }
   }
 
@@ -122,6 +147,20 @@
       margin-left: -1px;
     }
 
+    .top-text h3 {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 27px !important;
+    }
+    .wordChanging {
+      font-size: 27px !important;
+    }
+    .wrapper {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+
     .man-white {
       width: 100%;
       margin-left: -1px;
@@ -154,6 +193,25 @@
 
     .man-white {
       width: 30%;
+    }
+  }
+
+  @media screen and (min-width: 1800px) {
+    .top-text {
+      margin-bottom: 40px;
+      h3 {
+        font-size: 30px;
+      }
+      .wrapper {
+        h1 {
+          font-size: 50px;
+        }
+        .wordChanging {
+          span {
+            font-size: 40px;
+          }
+        }
+      }
     }
   }
 }
@@ -289,6 +347,8 @@
       width: 100%;
     }
   }
+
+  
 }
 
 // styling the fifth section
@@ -1188,6 +1248,7 @@
       width: 20%;
       margin-top: 4px;
     }
+    
 
     button {
       display: flex;
@@ -1201,6 +1262,7 @@
     .wishlist-btn {
       background-color: #fff;
       color: #bd3a3a;
+      margin-left: 20px !important;
     }
 
     .buy-now-btn {

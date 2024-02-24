@@ -39,7 +39,6 @@
 }
 .first-section h1 {
   font-weight: 700;
-  margin-top: 30px;
 }
 .first-section .wordChanging {
   text-align: left;
@@ -56,12 +55,39 @@
   justify-content: center;
 }
 .first-section .wrapper span {
+  text-shadow: -1px 1px 2px #828282;
   display: block;
   padding-left: 10px;
-  animation: spin-word 6s infinite;
-  color: black;
+  animation: spin-words 6s infinite;
+  color: #bd3a3a;
   overflow-x: hidden;
   height: 100%;
+}
+@keyframes spin-words {
+  10% {
+    transform: translateY(-115%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  35% {
+    transform: translateY(-212%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(-312%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  85% {
+    transform: translateY(-412%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
 }
 .first-section .first-btn {
   text-align: center;
@@ -107,6 +133,19 @@
     width: 100%;
     margin-left: -1px;
   }
+  .first-section .top-text h3 {
+    font-size: 20px;
+  }
+  .first-section h1 {
+    font-size: 27px !important;
+  }
+  .first-section .wordChanging {
+    font-size: 27px !important;
+  }
+  .first-section .wrapper {
+    font-size: 20px;
+    margin-left: 20px;
+  }
   .first-section .man-white {
     width: 100%;
     margin-left: -1px;
@@ -135,6 +174,20 @@
   }
   .first-section .man-white {
     width: 30%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .first-section .top-text {
+    margin-bottom: 40px;
+  }
+  .first-section .top-text h3 {
+    font-size: 30px;
+  }
+  .first-section .top-text .wrapper h1 {
+    font-size: 50px;
+  }
+  .first-section .top-text .wrapper .wordChanging span {
+    font-size: 40px;
   }
 }
 
@@ -994,6 +1047,7 @@
 .about-fifth-section .take-action-btn .wishlist-btn {
   background-color: #fff;
   color: #bd3a3a;
+  margin-left: 20px !important;
 }
 .about-fifth-section .take-action-btn .buy-now-btn {
   background-color: #bd3a3a;
