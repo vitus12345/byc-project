@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 
 const cartSchema = new mongoose.Schema({
+  reference: {
+    type:String,
+    required:true
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -55,11 +59,25 @@ const cartSchema = new mongoose.Schema({
           default: 1,
           required: true,
         },
+        companyName:{
+          type: String,
+          required: true,
+        },
+        state:{
+          type: String,
+          required: true,
+        },
+      
+        town:{
+          type: String,
+          required: true,
+        },
       }),
 
       required: true,
     },
   ],
+  
 
   bill: {
     type: Number,
@@ -72,8 +90,12 @@ const Cart = mongoose.model("Cart", cartSchema);
 
 function validateCart(cart) {
   const schema = {
+    reference: Joi.string().required(),
     user: Joi.objectId().required(),
     products: Joi.array().required(),
+    companyName: Joi.string().required(),
+    state: Joi.string().required(),
+    town: Joi.string().required()
   };
   return Joi.validate(cart, schema);
 }

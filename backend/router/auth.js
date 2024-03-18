@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const router = express.Router()
 
-
+  
 
 
 router.post('/', async (req,res) => {
@@ -26,7 +26,7 @@ router.post('/', async (req,res) => {
     
     const token = user.generateAuthToken();
 
-    res.send(token)
+    res.status(200).json({token, user, message: "Login Successful"})
 
 
 

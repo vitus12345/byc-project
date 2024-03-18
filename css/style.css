@@ -20,6 +20,32 @@
   display: none;
 }
 
+.has-search {
+  position: relative;
+  display: none;
+}
+
+.has-search .form-control {
+  padding-left: 2rem;
+  width: 400px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  right: 0;
+}
+
 @media screen and (max-width: 992px) {
   .navs {
     display: block;
@@ -1935,6 +1961,36 @@
   background-color: #bd3a3a;
   color: #fff;
 }
+.login .login-main input {
+  padding: 10px !important;
+  border: 1px solid #bd3a3a;
+  border-radius: 5px;
+  outline: none;
+}
+.login .login-main .placebyred {
+  background-color: #bd3a3a;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  height: 50px;
+  width: 100%;
+  border: 1px solid #bd3a3a;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 5rem;
+}
+.login .login-main .password-link {
+  position: relative;
+}
+.login .login-main .toggle-password {
+  position: absolute;
+  top: 75%;
+  right: 3%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: lightgray;
+  background-color: white;
+}
 .login .login-main .forget-pw {
   display: flex;
   justify-content: space-between;
@@ -1972,6 +2028,10 @@
   .login p {
     margin-bottom: 50px !important;
   }
+}
+
+.round {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

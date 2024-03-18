@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { user, products } = req.body;
+  const { user, products, reference } = req.body;
 
   try {
     const customer = await User.findById(user);
@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
     let cart = await Cart.findOne({ user });
 
     if (!cart) {
-      cart = new Cart({ user });
+      cart = new Cart({ user }); 
     }
 
     for (let product of products) {
@@ -41,6 +41,9 @@ router.post("/", async (req, res) => {
         quantity: product.quantity,
         color: product.color,
         size: product.size,
+        companyName: product.companyName,
+        state: product.state,
+        town: product.town
       });
     }
     // to check if the goods is available and to calculate the total
@@ -50,6 +53,7 @@ router.post("/", async (req, res) => {
     }
     // to calculate the price of the product
     cart.bill = totalPrice;
+    cart.reference = reference;
 
     const newCart = await cart.save();
 
@@ -58,5 +62,38 @@ router.post("/", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+router.delete("/deleteItem", async (req, res) =>{
+  try{
+
+
+   
+
+    const {user_id, product_id} =req.query
+
+    const user = await User.findById(user_id)
+    if(!user) return res.status(400).send("not found");
+
+    const productId = cart.products.findindex(product_id);
+    if(productId = -1) 
+    return res.status(400).send("product not found");
+    
+
+      // let cart = Cart.findById(req.params.id);
+      // if(!cart) return res.status(400).send("Cart not found");
+
+      // let productIndex = cart.product.findIndex(req.params.productId);
+      // if(productIndex === -1)
+      // return res.status(400).send("product not found");
+
+      
+    
+      res.status(200).send({user_id, product_id})
+ }
+ catch (err) {
+     res.status(500).json({ message: err.message });
+   }
+})
+
 
 module.exports = router;
